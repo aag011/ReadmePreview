@@ -18,6 +18,8 @@ Before you run any script, change the following paths in `train/utils/config/def
 PATH.root_local # to your local project root
 PATH.torch_home_local # for downloading temporary models from Torch model zoo
 DATASET.dataset_path_local # to the full OpenRooms dataset path
+DATASET.real_images_root_path 
+DATASET.iiw_path_local
 ```
 
 ## IIW Dataset
@@ -31,6 +33,8 @@ Extract the zip file and rename the folder to "iiw-dataset". Place this folder a
 Download checkpoints from [this folder](https://drive.google.com/drive/folders/18xWTUB_63GyzJ_SZrzV9cW2Dvy40rQPf?usp=share_link) and place checkpoints at `Checkpoint/`.
 
 ### Generate attention maps on IIW
+
+Create a folder with name "Attention_Maps". This folder will be used to save the generated attention maps.
 
 ``` bash
 CUDA_VISIBLE_DEVICES=0 python train/train_iiw.py --task_name DATE-train_mm1_albedo_eval_IIW_RESUME20230517-224958 --if_train False --if_val False --if_vis True --eval_every_iter 4000 --config-file train/configs/train_albedo.yaml --resume 20230517-224958--DATE-train_mm1_albedo
