@@ -34,7 +34,7 @@ Download checkpoints from [this folder](https://drive.google.com/drive/folders/1
 
 ### Generate attention maps on IIW
 
-Create a folder with name "Attention_Maps". This folder will be used to save the generated attention maps.
+Create a folder with name `Attention_Maps/`. This folder will be used to save the generated attention maps.
 
 ``` bash
 CUDA_VISIBLE_DEVICES=0 python train/train_iiw.py --task_name DATE-train_mm1_albedo_eval_IIW_RESUME20230517-224958 --if_train False --if_val False --if_vis True --eval_every_iter 4000 --config-file train/configs/train_albedo.yaml --resume 20230517-224958--DATE-train_mm1_albedo
